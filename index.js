@@ -27,6 +27,7 @@ bot.on('message', message => {
         `**${prefix}say (ข้อความ)** : บอทพูดตามที่พิมพ์\n`+
         `**${prefix}help** : คำสั่งช่วยเหลือ\n`+
         `**${prefix}time** : คำสั่งดูเวลาเปิดร้าน\n`+
+        `**${prefix}settime (เวลาเปิดปิด)** : คำสั่งตั้งเวลาเปิดร้าน\n`+
         `**${prefix}open** : คำสั่งเปิดร้าน\n`+
         `**${prefix}close** : คำสั่งปิดร้าน\n`+
         `**${prefix}status** : คำสั่งดูสถานะว่าร้านเปิดหรือปิด\n`+
@@ -37,8 +38,6 @@ bot.on('message', message => {
     }
     if (command === 'time')
     {
-        message.delete()
-        if(!message.member.hasPermission(['ADMINISTRATOR']) && owner !== cha) return message.reply(`❌ คุณไม่ได้รับอนุญาติให้ใช้คำสั่ง ~~${message.content}~~`);
         const embed = new Discord.RichEmbed()
         .addField('เวลาทำการ','เวลา : '+time)
         .setColor(0x00ff00)
