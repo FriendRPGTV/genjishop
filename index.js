@@ -1,20 +1,25 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-let name = bot.user.username;
-let avatar = bot.user.avatarURL;
 let prefix = 'genji.';
 let shop = {'status': 1};
 let time = '17:00 - 19:00';
-let cha = bot.users.get('291149768397422593');
-let admin = bot.users.get('291149768397422593');
 let credit = ' | สร้างโดย Chakung';
 bot.on("ready", () => {
+    
+    let name = bot.user.username;
+    let avatar = bot.user.avatarURL;
+    let cha = bot.users.get('291149768397422593');
+    let admin = bot.users.get('291149768397422593');
     bot.user.setPresence({ game: { name: `คำสั่ง ${prefix}help | สร้างโดย Chakung#0785` }, type: 0 });
     console.log(`${name} Online! Created by Chakung.`);
     cha.send(`__${name} Online__ `+(new Date));
 });
 bot.on('message', message => {
     if(!message.content.startsWith(prefix)) return;
+    let name = bot.user.username;
+    let avatar = bot.user.avatarURL;
+    let cha = bot.users.get('291149768397422593');
+    let admin = bot.users.get('291149768397422593');
     let command = message.content.split(' ')[0];
     command = command.slice(prefix.length);
     var args = message.content.split(' ').slice(1);
@@ -75,6 +80,10 @@ bot.on('message', message => {
 });
 bot.on('message', message => {
     if(!message.content.startsWith(prefix)) return;
+    let name = bot.user.username;
+    let avatar = bot.user.avatarURL;
+    let cha = bot.users.get('291149768397422593');
+    let admin = bot.users.get('291149768397422593');
     let owner = message.author;
     let command = message.content.split(' ')[0];
     command = command.slice(prefix.length);
