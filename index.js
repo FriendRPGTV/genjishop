@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-let name = bot.user.displayName;
+let name = bot.user.username;
 let avatar = bot.user.avatarURL;
 let prefix = 'genji.';
 let shop = {'status': 1};
@@ -23,6 +23,7 @@ bot.on('message', message => {
         .addField('รายการคำสั่ง',
         `**${prefix}say (ข้อความ)** : บอทพูดตามที่พิมพ์\n`+
         `**${prefix}help** : คำสั่งช่วยเหลือ\n`+
+        `**${prefix}time** : คำสั่งดูเวลาเปิดร้าน\n`+
         `**${prefix}open** : คำสั่งเปิดร้าน\n`+
         `**${prefix}close** : คำสั่งปิดร้าน\n`+
         `**${prefix}status** : คำสั่งดูสถานะว่าร้านเปิดหรือปิด\n`+
@@ -62,7 +63,7 @@ bot.on('message', message => {
     }
     if(command === 'credit') {
         const embed = new Discord.RichEmbed()
-        .setAuthor(cha.displayName+' ผู้สร้างบอท', cha.avatarURL)
+        .setAuthor(cha.username+' ผู้สร้างบอท', cha.avatarURL)
         .setDescription('พัฒนาบอท Discord ด้วยภาษา Javascript รับเปิดบอท online 24 ชั่วโมง ราคาเริ่มต้นที่ 100 บาท')
         .setThumbnail(cha.avatarURL)
         .setURL('https://www.facebook.com/polite.cha')
