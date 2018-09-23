@@ -9,7 +9,6 @@ bot.on("ready", () => {
     let name = bot.user.username;
     let avatar = bot.user.avatarURL;
     let cha = bot.users.get('291149768397422593');
-    let admin = bot.users.get('487229777737023488');
     bot.user.setPresence({ game: { name: `คำสั่ง ${prefix}help | สร้างโดย Chakung#0785` }, type: 0 });
     console.log(`${name} Online! Created by Chakung.`);
     cha.send(`__${name} Online__ `+(new Date));
@@ -19,7 +18,6 @@ bot.on('message', message => {
     let name = bot.user.username;
     let avatar = bot.user.avatarURL;
     let cha = bot.users.get('291149768397422593');
-    let admin = bot.users.get('487229777737023488');
     let command = message.content.split(' ')[0];
     command = command.slice(prefix.length);
     var args = message.content.split(' ').slice(1);
@@ -83,7 +81,6 @@ bot.on('message', message => {
     let name = bot.user.username;
     let avatar = bot.user.avatarURL;
     let cha = bot.users.get('291149768397422593');
-    let admin = bot.users.get('487229777737023488');
     let owner = message.author;
     let command = message.content.split(' ')[0];
     command = command.slice(prefix.length);
@@ -109,7 +106,7 @@ bot.on('message', message => {
         .setColor(0xffffff)
         .setFooter(name+credit, avatar)
         message.channel.sendEmbed(embed)
-        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@${admin.id}> เพื่อซื้อได้เลย! `));
+        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@487229777737023488> เพื่อซื้อได้เลย! `));
     }
     if (command === 'close')
     {
