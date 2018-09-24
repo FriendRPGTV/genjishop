@@ -4,6 +4,7 @@ let prefix = 'genji.';
 let shop = {'status': 1};
 let time = '17:00 - 19:00';
 let credit = ' | สร้างโดย Chakung';
+const Canvas = require('canvas');
 bot.on("ready", () => {
     
     let name = bot.user.username;
