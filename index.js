@@ -24,10 +24,10 @@ bot.on('message', message => {
     if(command === 'help') {
         const embed = new Discord.RichEmbed()
         .addField('รายการคำสั่ง',
-        `**${prefix}say (ข้อความ)** : บอทพูดตามที่พิมพ์\n`+
+        `**${prefix}say** (ข้อความ) : บอทพูดตามที่พิมพ์\n`+
         `**${prefix}help** : คำสั่งช่วยเหลือ\n`+
         `**${prefix}time** : คำสั่งดูเวลาเปิดร้าน\n`+
-        `**${prefix}settime (เวลาเปิดปิด)** : คำสั่งตั้งเวลาเปิดร้าน\n`+
+        `**${prefix}settime** (เวลาเปิดปิด) : คำสั่งตั้งเวลาเปิดร้าน\n`+
         `**${prefix}open** : คำสั่งเปิดร้าน\n`+
         `**${prefix}close** : คำสั่งปิดร้าน\n`+
         `**${prefix}status** : คำสั่งดูสถานะว่าร้านเปิดหรือปิด\n`+
@@ -105,7 +105,7 @@ bot.on('message', message => {
         .setColor(0xffffff)
         .setFooter(name+credit, avatar)
         message.channel.sendEmbed(embed)
-        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@487229777737023488> เพื่อซื้อได้เลย! `));
+        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@${message.author.id}> เพื่อซื้อได้เลย! `));
     }
     if (command === 'close')
     {
