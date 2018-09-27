@@ -98,6 +98,7 @@ bot.on('message', message => {
     if (command === 'open')
     {
         message.delete()
+        let owner = message.author;
         if(!message.member.hasPermission(['ADMINISTRATOR']) && owner !== cha) return message.reply(`❌ คุณไม่ได้รับอนุญาติให้ใช้คำสั่ง ~~${message.content}~~`);
         shop.status = 1;
         const embed = new Discord.RichEmbed()
@@ -105,7 +106,7 @@ bot.on('message', message => {
         .setColor(0xffffff)
         .setFooter(name+credit, avatar)
         message.channel.sendEmbed(embed)
-        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@${message.author.id}> เพื่อซื้อได้เลย! `));
+        .then(message => message.channel.send("@everyone"+` ร้านเปิดแล้วนะงับ ทักหา <@${owner.id}> เพื่อซื้อได้เลย! `));
     }
     if (command === 'close')
     {
